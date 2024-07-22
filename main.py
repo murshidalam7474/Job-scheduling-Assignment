@@ -5,7 +5,7 @@ from sqlalchemy import create_engine, Column, Integer, String, DateTime
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from datetime import datetime, timedelta
-
+#edit the below database url according to your DB
 DATABASE_URL = "mysql+mysqlconnector://root:alam@localhost/jobsdb"
 
 engine = create_engine(DATABASE_URL)
