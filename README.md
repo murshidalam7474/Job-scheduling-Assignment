@@ -69,7 +69,8 @@ You can use command-line tools like HTTPie to interact with the FastAPI applicat
  to list all the jobs you can go to this link http://127.0.0.1:8000/jobs.
 
 ### Create a Job 
-To create a job using cmd: http POST http://127.0.0.1:8000/jobs name="Job Name" description="Job Description" interval="daily"
+To create a job using cmd:
+http POST http://127.0.0.1:8000/jobs name="Weekly Backup" description="Backup database" day_of_week="Monday" time_of_day="21:00"
 
 ### Run a Job
 To run a job:
