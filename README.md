@@ -11,6 +11,8 @@ A FastAPI-based job management system that allows you to create, list, and run j
 - SQLAlchemy
 - mysql-connector-python
 - Uvicorn
+- Schedule
+- Pytz
 
 **Note:** Update the database URL in the code with your MySQL connection details:
 
@@ -34,6 +36,18 @@ The database schema includes the following table:
 - `last_run`: DateTime, timestamp of the last run.
 - `next_run`: DateTime, timestamp of the next scheduled run.
 - `interval`: String, interval for the job scheduling.
+- `day_of_week`: String, day of the week for the job (newly added).
+- `time_of_day`: String, time of day for the job (newly added).
+
+## Additional Requirements
+-`BackgroundTasks`: Utilized for handling background job scheduling in FastAPI.
+-`Threading`: Required for running the job scheduler in a separate thread.
+-`Timezone Handling`: Pytz is used for converting UTC time to India Standard Time (Asia/Kolkata).
+
+## Note: If you have already created previously the jobs table, run the following command in your MySQL prompt to add the new fields:
+ALTER TABLE jobs
+ADD COLUMN day_of_week VARCHAR(20) NULL,
+ADD COLUMN time_of_day VARCHAR(5) NULL;
 
 ##  Interact with FastAPI Application Using API Documentation
 
